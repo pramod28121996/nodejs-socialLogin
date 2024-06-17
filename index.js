@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const userRouter = require("./src/routes/userRoute");
+const { connectionOpen } = require("./src/config/conn");
 app.use(express.json());
 require("./src/config/conn");
 
