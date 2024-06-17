@@ -1,5 +1,4 @@
 const userService = require("../service/userService");
-const { connectionOpen, connectionClose } = require("../config/conn");
 
 class userController {
   //user register controller for sing_up route
@@ -34,6 +33,7 @@ class userController {
       res.status(response.status).send(error);
     }
   };
+
 }
 
 module.exports = new userController();
