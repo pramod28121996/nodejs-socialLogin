@@ -129,7 +129,7 @@ const login = async (user) => {
 const getUser = async (token) => {
   try {
     const id = jwt.verify(token, SECRET_KEY)._id;
-    const response = await UserModel.findOne({ _id: id, isDelete: false });
+    const response = await SocialLogin.findOne({ _id: id, isDelete: false });
     if (!response) {
       apiResponce.isValid = false;
       apiResponce.data = null;
@@ -149,5 +149,7 @@ const getUser = async (token) => {
     return apiResponce;
   }
 };
+
+
 
 module.exports = { register, login, getUser };
